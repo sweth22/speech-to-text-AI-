@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech-to-Text AI</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Heroicons CDN for icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-microphone-alt"></i> Speech-to-Text AI</h1>
+            <button id="themeToggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Live Recording Section -->
+        <section class="live-section">
+            <h2>Live Recording</h2>
+            <div class="controls">
+                <button id="startRecord" class="btn primary">
+                    <i class="fas fa-microphone"></i> Start Listening
+                </button>
+                <button id="stopRecord" class="btn secondary hidden">
+                    <i class="fas fa-stop"></i> Stop
+                </button>
+                <div id="status" class="status"></div>
+            </div>
+        </section>
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <h2>Upload Audio File</h2>
+            <input type="file" id="audioFile" accept="audio/*" class="file-input">
+            <button id="processUpload" class="btn secondary hidden">
+                <i class="fas fa-play"></i> Transcribe
+            </button>
+        </section>
+
+        <!-- Transcript Display -->
+        <section class="transcript-section">
+            <h2>Transcript</h2>
+            <textarea id="transcript" readonly placeholder="Transcript will appear here..."></textarea>
+            <div class="transcript-actions">
+                <button id="copyTranscript" class="btn secondary">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+                <button id="downloadTranscript" class="btn primary">
+                    <i class="fas fa-download"></i> Download TXT
+                </button>
+                <button id="clearTranscript" class="btn secondary">
+                    <i class="fas fa-trash"></i> Clear
+                </button>
+            </div>
+        </section>
+
+        <!-- Audio Player for Upload (hidden initially) -->
+        <audio id="audioPlayer" style="display: none;"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
